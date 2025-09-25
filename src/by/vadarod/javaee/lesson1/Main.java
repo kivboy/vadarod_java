@@ -5,10 +5,13 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Main {
+    private static final String PROPERTIES_FILE_NAME = "lesson_1.properties";
+
     public static void main(String[] args) {
         Properties properties = new Properties();
+
         try (InputStream input = Main.class.getClassLoader()
-                .getResourceAsStream("lesson_1.properties")) {
+                .getResourceAsStream(PROPERTIES_FILE_NAME)) {
 
             if (input == null) {
                 System.out.println("Не удалось найти файл lesson_1.properties");
